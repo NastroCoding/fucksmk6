@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('contact_name');
             $table->string('contact_phone');
             $table->date('start_rent_date');
-            $table->integer('total_rent_date');
+            $table->integer('total_rent_days');
             $table->timestamps();
         });
     }

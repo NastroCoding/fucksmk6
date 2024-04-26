@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BusController;
+use App\Http\Controllers\DriverController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +31,21 @@ Route::middleware('auth:sanctum')->group(function(){
 
     Route::controller(BusController::class)->group(function(){
         Route::get('/v1/buses', 'index');
+        Route::post('/v1/buses', 'store');
+        Route::put('/v1/buses/{id}', 'update');
+        Route::delete('/v1/buses/{id}', 'destroy');
     });
 
+    Route::controller(DriverController::class)->group(function(){
+        Route::get('/v1/drivers', 'index');
+        Route::post('/v1/drivers', 'store');
+        Route::put('/v1/drivers/{id}', 'update');
+        Route::delete('/v1/drivers/{id}', 'destroy');
+    });
 
+    Route::controller(OrderController::class)->group(function(){
+        Route::get('/v1/orders', 'index');
+        Route::post('/v1/orders', 'store');
+        Route::delete('/v1/orders/{id}', 'delete');
+    });
 });
