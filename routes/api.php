@@ -22,7 +22,7 @@ Route::controller(AuthController::class)->group(function() {
     Route::post('/v1/auth/login', 'login');
 });
 
-Route::middleware('auth:sanctum')->group(function(){
+// Route::middleware('auth:sanctum')->group(function(){
 
     Route::controller(AuthController::class)->group(function(){
         Route::get('/v1/auth/me', 'me');
@@ -48,4 +48,4 @@ Route::middleware('auth:sanctum')->group(function(){
         Route::post('/v1/orders', 'store');
         Route::delete('/v1/orders/{id}', 'delete');
     });
-});
+// });

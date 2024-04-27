@@ -20,6 +20,9 @@ return new class extends Migration
             $table->date('start_rent_date');
             $table->integer('total_rent_days');
             $table->timestamps();
+
+            $table->foreign('bus_id')->references('id')->on('buses')->onDelete('cascade');
+            $table->foreign('driver_id')->references('id')->on('drivers')->onDelete('cascade');
         });
     }
 
