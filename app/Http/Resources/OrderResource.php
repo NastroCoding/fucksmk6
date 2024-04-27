@@ -21,7 +21,7 @@ class OrderResource extends JsonResource
             'contact_name' => $this->contact_name,
             'contact_phone' => $this->contact_phone,
             'start_rent_date' => $this->start_rent_date,
-            'total_rent_days' => $this->start_rent_days,
+            'total_rent_days' => $this->total_rent_days,
             'bus' => new BusResource($this->buses),
             'driver' => new DriverResource($this->drivers)
         ];
