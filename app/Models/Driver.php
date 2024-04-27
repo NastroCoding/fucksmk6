@@ -12,6 +12,6 @@ class Driver extends Model
     protected $guarded = [];
 
     public function orders() {
-        $this->hasMany(Order::class);
+        return $this->hasMany(Order::class);
     }
 }

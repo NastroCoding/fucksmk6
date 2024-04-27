@@ -12,10 +12,10 @@ class Order extends Model
     protected $guarded = [];
 
     public function buses() {
-        $this->belongsTo(Bus::class);
+        return $this->belongsTo(Bus::class, 'bus_id');
     }
 
     public function drivers() {
-        $this->belongsTo(Driver::class);
+        return $this->belongsTo(Driver::class, 'driver_id');
     }
 }
